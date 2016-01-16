@@ -5,8 +5,8 @@
       <h3 class="panel-title">店一覧</h3>
     </div>
     <div class="panel-body">
-      <% @stores.each do |store| %>
-        <li><%= link_to store.name, store_users_path(store.id) %></li>
+      <% @users.each do |user| %>
+        <li><%= link_to user.email, post_path(user.id) %></li>
       <% end %>
     </div>
   </div>
