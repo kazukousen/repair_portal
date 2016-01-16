@@ -12,15 +12,4 @@
 
 </div>
 
-<div class="col-md-3 col-xs-12 col-md-pull-9">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h2 class="panel-title">メインカテゴリー</h2>
-    </div>
-    <div class="panel-body">
-      <% @main_categories.each do |main_category| %>
-        <li> <%= link_to main_category.name, sub_category_path(main_category.id) %> </li>
-      <% end %>
-    </div>
-  </div>
-</div>
+<%= render 'layouts/main_categories', object: @main_categories %>
