@@ -14,6 +14,12 @@ Rails.application.routes.draw do
   root 'tops#index'
 
   resources :stores
+  resources :users do
+    member do
+      get 'select'
+    end
+  end
+
   resources :users
 
   resources :main_categories
