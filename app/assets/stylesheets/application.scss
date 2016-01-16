@@ -68,6 +68,20 @@ body {
   border: 1px solid #54a05b;
 }
 
+
+.panel-green {
+  border-color: #54a081;
+
+  .panel-heading {
+    background-color: #54a081;
+    border-color: inherit;
+
+    .panel-title {
+      color: white;
+    }
+  }
+}
+
 .panel-sub-green {
   border-color: #54a05b;
 

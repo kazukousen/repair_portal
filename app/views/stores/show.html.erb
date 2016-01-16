@@ -1,15 +1,18 @@
 <div class="col-md-9 col-xs-12 col-md-push-3">
 
-  <div class="list-group">
+  <ul class="list-group">
     <div class="list-group-item active-sub-green">
       店一覧
     </div>
     <% @stores.each do |store| %>
-      <%= link_to store.name, store_users_path(store.id),
-        class: 'list-group-item list-group-item-sub-green' %>
+      <li class="list-group-item list-group-item-sub-green">
+        <%= link_to store.name, store_users_path(store.id),
+        class: 'store-title' %>
+        <p>住所：<%= store.address %> 電話番号：<%= store.phone_number %></p>
+        <p><%= store.body %></p>
+      </li>
     <% end %>
-  </div>
-
+  </ul>
 </div>
 
 <%= render 'layouts/main_categories', object: @main_categories %>

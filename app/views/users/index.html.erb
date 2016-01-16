@@ -1,28 +1,31 @@
 <div class="col-md-9 col-xs-12 col-md-push-3">
-  <div class="list-group">
-    <div class="list-group-item active-sub-green">
-      <% if @posts %>
-        「<%= @username %>」さんの投稿一覧
-      <% end %>
-      <% if @users %>
-        ユーザ一覧
-      <% end %>
-    </div>
+  <% if @users %>
+    <div class="list-group">
+      <div class="list-group-item active-sub-green">
+          ユーザ一覧
+      </div>
 
-    <% if @posts %>
-      <% @posts.each do |post| %>
-        <%= link_to post.title, post_path(post.id),
-          class: 'list-group-item list-group-item-sub-green' %>
-      <% end %>
-    <% end %>
-
-    <% if @users %>
       <% @users.each do |user| %>
         <%= link_to user.name, post_users_path(user.id),
           class: 'list-group-item list-group-item-sub-green' %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+
+  <% if @posts %>
+    <ul class="list-group">
+      <div class="list-group-item active-sub-green">
+        「<%= @username %>」さんの投稿一覧
+      </div>
+      <% @posts.each do |post| %>
+        <li class="list-group-item list-group-item-sub-green">
+          <span class="store-title"><%= post.title %></span>
+          <p><%= post.body.truncate(20, omission: '...') %></p>
+          <%= link_to "続きを読む", post_path(post.id), class: "text-right", style: 'text-align:center' %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>
 
 <%= render 'layouts/main_categories', object: @main_categories %>
