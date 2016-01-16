@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'stores/index'
+
+  get 'stores/show'
+
+  get 'sub_categories/index'
+
+  get 'sub_categories/show'
+
+  get 'main_categories/index'
+
+  get 'main_categories/show'
+
   devise_for :users
   get 'tops/index'
 
