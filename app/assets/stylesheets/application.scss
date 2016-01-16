@@ -29,6 +29,7 @@ body {
 
     &:hover {
       color: white;
+      opacity: 0.7;
     }
   }
   .navbar-toggle {
@@ -49,13 +50,81 @@ body {
   }
 }
 
-.list-group-item {
-  border: 1px solid #54a081;
+.active-brown {
+  background: #a08154;
+  color: white;
 }
 
-.active-green {
-  background: #54a081;
+.list-group-item-brown {
+  border: 1px solid #a08154;
+}
+
+.active-sub-green {
+  background: #54a05b;
   color: white;
+}
+
+.list-group-item-sub-green {
+  border: 1px solid #54a05b;
+}
+
+.panel-sub-green {
+  border-color: #54a05b;
+
+  .panel-heading {
+    background-color: #54a05b;
+    border-color: inherit;
+
+    .panel-title {
+      color: white;
+    }
+  }
+}
+
+.panel-red {
+  border-color: #a05b54;
+
+  .panel-heading {
+    background-color: #a05b54;
+    border-color: inherit;
+
+    .panel-title {
+      color: white;
+    }
+  }
+}
+
+
+.btn-sub-green {
+  background: #54a05b;
+  color: white;
+
+  &:hover {
+    color: white;
+    opacity: 0.7;
+  }
+
+  &:focus {
+    color: white;
+  }
+}
+
+.btn-red {
+  background: #a05b54;
+  color: white;
+
+  &:hover {
+    color: white;
+    opacity: 0.7;
+  }
+
+  &:focus {
+    color: white;
+  }
+}
+
+.article-body {
+  font-size: 17px;
 }
 
 .notice {

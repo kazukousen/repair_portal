@@ -1,14 +1,13 @@
 <div class="col-md-9 col-xs-12 col-md-push-3">
 
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title">カテゴリー一覧</h3>
+  <div class="list-group">
+    <div class="list-group-item active-sub-green">
+      カテゴリー一覧
     </div>
-    <div class="panel-body">
-      <% @sub_categories.each do |sub_category| %>
-        <li><%= link_to sub_category.name, store_path(sub_category.id) %></li>
-      <% end %>
-    </div>
+    <% @sub_categories.each do |sub_category| %>
+      <%= link_to sub_category.name, store_path(sub_category.id),
+        class: 'list-group-item list-group-item-sub-green' %>
+    <% end %>
   </div>
 
 </div>
