@@ -1,30 +1,28 @@
 <div class="col-md-9 col-xs-12 col-md-push-3">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title">
+  <div class="list-group">
+    <div class="list-group-item active-sub-green">
       <% if @posts %>
         「<%= @username %>」さんの投稿一覧
       <% end %>
       <% if @users %>
         ユーザ一覧
       <% end %>
-      </h3>
     </div>
-    <div class="panel-body">
-      <% if @posts %>
-        <% @posts.each do |post| %>
-          <li><%= link_to post.title, post_path(post.id) %></li>
-        <% end %>
-      <% end %>
 
-      <% if @users %>
-        <% @users.each do |user| %>
-          <li><%= link_to user.name, post_users_path(user.id) %></li>
-        <% end %>
+    <% if @posts %>
+      <% @posts.each do |post| %>
+        <%= link_to post.title, post_path(post.id),
+          class: 'list-group-item list-group-item-sub-green' %>
       <% end %>
-    </div>
+    <% end %>
+
+    <% if @users %>
+      <% @users.each do |user| %>
+        <%= link_to user.name, post_users_path(user.id),
+          class: 'list-group-item list-group-item-sub-green' %>
+      <% end %>
+    <% end %>
   </div>
-
 </div>
 
 <%= render 'layouts/main_categories', object: @main_categories %>
