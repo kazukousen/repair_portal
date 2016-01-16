@@ -15,6 +15,9 @@ gem 'devise'
 
 gem 'bootstrap-sass'
 
+# gem 'seed_fu', '~> 2.3'
+gem 'seed-fu', github: 'mbleigh/seed-fu'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

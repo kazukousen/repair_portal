@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/mbleigh/seed-fu.git
+  revision: a13ce36900e6283072c06eb45b713353ccc13bfe
+  specs:
+    seed-fu (2.3.5)
+      activerecord (>= 3.1, < 4.3)
+      activesupport (>= 3.1, < 4.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -188,6 +196,7 @@ DEPENDENCIES
   rails (= 4.2.5)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  seed-fu!
   spring
   turbolinks
   uglifier (>= 1.3.0)
