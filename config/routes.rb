@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'users/index'
+  get 'stores/new'
 
   devise_for :users
 
@@ -11,6 +12,9 @@ Rails.application.routes.draw do
   # resources :users, :only => [:index, :show]
 
   root 'tops#index'
+
+  resources :stores
+  resources :users
 
   resources :main_categories
   resources :sub_categories
