@@ -19,7 +19,7 @@
         </h3>
         <% if current_user == @user %>
           <%= link_to "お店を新規登録", stores_new_path, class: "btn btn-primary" %>
-          <%= link_to "お店を選択", "#", class: "btn btn-info" %>
+          <%= link_to "お店を選択", select_user_path, class: "btn btn-info" %>
         <% end %>
       <% end %>
     </div>

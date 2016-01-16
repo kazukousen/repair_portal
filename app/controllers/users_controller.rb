@@ -17,4 +17,16 @@ class UsersController < ApplicationController
     @store = Store.find(@user.store_id) if @user.store_id
     @posts = Post.where(user_id: params[:id])
   end
+
+  def select
+    @stores = Store.all
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @store_id = params[:user][:store_id]
+    @user.update_attributes(store_id: @store_id)
+    redirect_to user_path(@user)
+  end
 end
