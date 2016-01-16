@@ -16,6 +16,48 @@
 
 @import "bootstrap";
 
+body {
+  background-image: url(/back2.jpg)
+}
+
+.navbar-green {
+  // background: #54a081;
+  background: rgba(84, 160, 129, 0.9);
+
+  .navbar-brand {
+    color: white;
+
+    &:hover {
+      color: white;
+    }
+  }
+  .navbar-toggle {
+    color: white;
+    border: 1px solid white;
+
+    .icon-bar {
+      background: white;
+    }
+  }
+
+  a {
+    color: white;
+
+    &:hover {
+      color: #54a081;
+    }
+  }
+}
+
+.list-group-item {
+  border: 1px solid #54a081;
+}
+
+.active-green {
+  background: #54a081;
+  color: white;
+}
+
 .notice {
   width: 100%;
   border: 2px solid green;
