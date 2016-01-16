@@ -3,5 +3,7 @@ class SubCategoriesController < ApplicationController
   end
 
   def show
+    # @sub_categories = SubCategory.all
+    @sub_categories = SubCategory.where(main_category_id: params[:id])
   end
 end
