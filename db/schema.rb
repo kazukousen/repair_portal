@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 20160116144151) do
     t.text     "body",            limit: 65535
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
-    t.integer  "store_id",        limit: 4
   end
 
   create_table "sub_categories", force: :cascade do |t|

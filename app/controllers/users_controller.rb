@@ -11,4 +11,10 @@ class UsersController < ApplicationController
 
     @main_categories = MainCategory.all
   end
+
+  def show
+    @user = User.find(params[:id])
+    @store = Store.find(@user.store_id) if @user.store_id
+    @posts = Post.where(user_id: params[:id])
+  end
 end
