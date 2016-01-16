@@ -15,3 +15,21 @@
  */
 
 @import "bootstrap";
+
+.notice {
+  width: 100%;
+  border: 2px solid green;
+  background: #fff;
+  color: green;
+  margin-bottom: 20px;
+  padding: 1rem;
+}
+
+.alert {
+  width: 100%;
+  border: 2px solid red;
+  background: #fff;
+  color: red;
+  margin-bottom: 20px;
+  padding: 1rem;
+}
