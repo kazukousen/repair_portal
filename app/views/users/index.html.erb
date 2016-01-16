@@ -1,12 +1,26 @@
 <div class="col-md-9 col-xs-12 col-md-push-3">
-
   <div class="panel panel-primary">
     <div class="panel-heading">
-      <h3 class="panel-title">店一覧</h3>
+      <h3 class="panel-title">
+      <% if @posts %>
+        「<%= @username %>」さんの投稿一覧
+      <% end %>
+      <% if @users %>
+        ユーザ一覧
+      <% end %>
+      </h3>
     </div>
     <div class="panel-body">
-      <% @users.each do |user| %>
-        <li><%= link_to user.name, post_path(user.id) %></li>
+      <% if @posts %>
+        <% @posts.each do |post| %>
+          <li><%= link_to post.title, post_path(post.id) %></li>
+        <% end %>
+      <% end %>
+
+      <% if @users %>
+        <% @users.each do |user| %>
+          <li><%= link_to user.name, post_users_path(user.id) %></li>
+        <% end %>
       <% end %>
     </div>
   </div>

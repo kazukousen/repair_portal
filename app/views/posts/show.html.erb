@@ -1,2 +1,16 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="col-md-9 col-xs-12 col-md-push-3">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2 class="panel-title"><%= @post.title %></h2>
+    </div>
+    <div class="panel-body">
+
+      <%= @post.body %>
+
+    </div>
+  </div>
+
+</div>
+
+<%= render 'layouts/main_categories', object: @main_categories %>
