@@ -1,11 +1,22 @@
 Rails.application.routes.draw do
+  get 'users/index'
+
   devise_for :users
+
+  # devise_for :users, :controllers => {
+  #   :sessions      => "users/sessions",
+  #   :registrations => "users/registrations",
+  #   :passwords     => "users/passwords"
+  # }
+  # resources :users, :only => [:index, :show]
 
   root 'tops#index'
 
   resources :main_categories
   resources :sub_categories
-  resources :stores
+  resources :stores, only: [:show] do
+    resources :users, :only => [:index]
+  end
   resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.
