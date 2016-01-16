@@ -95,6 +95,19 @@ body {
   }
 }
 
+.panel-brown {
+  border-color: #a08154;
+
+  .panel-heading {
+    background-color: #a08154;
+    border-color: inherit;
+
+    .panel-title {
+      color: white;
+    }
+  }
+}
+
 .panel-red {
   border-color: #a05b54;
 

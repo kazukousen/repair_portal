@@ -1,8 +1,8 @@
 <div class="col-md-9 col-xs-12 col-md-push-3">
-  <div class="panel panel-primary">
+  <div class="panel panel-green">
     <div class="panel-heading">
       <h3 class="panel-title">
-        <%= @user.name %>
+        ユーザー名：<%= @user.name %>
       </h3>
     </div>
     <div class="panel-body">
@@ -19,7 +19,7 @@
         </h3>
         <% if current_user == @user %>
           <%= link_to "お店を新規登録", stores_new_path, class: "btn btn-primary" %>
-          <%= link_to "お店を選択", select_user_path, class: "btn btn-info" %>
+          <%= link_to "お店を選択", select_user_path, class: "btn btn-sub-green" %>
         <% end %>
       <% end %>
     </div>
@@ -28,7 +28,7 @@
 </div>
 
 <div class="col-md-3 col-xs-12 col-md-pull-9">
-  <div class="panel panel-primary">
+  <div class="panel panel-brown">
     <div class="panel-heading">
       <h2 class="panel-title">記事一覧</h2>
     </div>
