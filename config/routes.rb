@@ -1,4 +1,36 @@
 Rails.application.routes.draw do
+  get 'users/index'
+  get 'stores/new'
+
+  devise_for :users
+
+  # devise_for :users, :controllers => {
+  #   :sessions      => "users/sessions",
+  #   :registrations => "users/registrations",
+  #   :passwords     => "users/passwords"
+  # }
+  # resources :users, :only => [:index, :show]
+
+  root 'tops#index'
+
+  resources :stores
+  resources :users do
+    member do
+      get 'select'
+    end
+  end
+
+  resources :users
+
+  resources :main_categories
+  resources :sub_categories
+  resources :stores, only: [:show] do
+    resources :users, :only => [:index]
+  end
+  resources :posts do
+    resources :users, :only => [:index]
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

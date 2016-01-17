@@ -1,0 +1,28 @@
+<div class="col-md-9 col-xs-12 col-md-push-3">
+
+  <div class="panel panel-green">
+    <div class="panel-heading post-heading">
+      <h2 class="panel-title">
+        <span class="h3">
+          <%= @post.title %>
+        </span>
+      </h2>
+    </div>
+    <div class="panel-body post-heading">
+
+      <p class="article-body"><%= @post.body %></p>
+
+        <% if current_user %>
+          <%= link_to '編集する', edit_post_path(params[:id]), class: 'btn btn-primary' %>
+          <%= link_to '削除する', post_path, method: :delete, class: 'btn btn-red',
+              data: { confirm: '本当に削除してもよろしいですか？'} %>
+        <% end %>
+      <p class="text-right article-username">投稿者：<%= @post.user.name %></p>
+      <p class="text-right">投稿日：<%= @post.created_at.strftime("%Y年 %m月 %d日") %></p>
+
+    </div>
+  </div>
+
+</div>
+
+<%= render 'layouts/main_categories', object: @main_categories %>

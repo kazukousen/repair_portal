@@ -1,0 +1,185 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap";
+
+body {
+  background-image: url(/back2.jpg);
+  color: #030303;
+  font-family: Avenir , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,"游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+  word-wrap: break-word;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.thumbnail {
+  margin-bottom: 8px;
+}
+
+.main-image {
+  text-align: center;
+}
+
+.navbar-green {
+  background: rgba(84, 160, 129, 0.9);
+
+  .navbar-brand {
+    color: white;
+
+    &:hover {
+      color: white;
+      opacity: 0.7;
+    }
+  }
+  .navbar-toggle {
+    color: white;
+    border: 1px solid white;
+
+    .icon-bar {
+      background: white;
+    }
+  }
+
+  a {
+    color: white;
+
+    &:hover {
+      color: #54a081;
+    }
+  }
+}
+
+.active-brown {
+  background: #a08154;
+  color: white;
+  border: 1px solid #a08154;
+}
+
+.list-group-item {
+  padding: 13px 15px 10px;
+}
+
+.list-group-item-brown {
+  border: 1px solid #a08154;
+}
+
+.active-sub-green {
+  background: #54a05b;
+  color: white;
+  border: 1px solid #54a05b;
+}
+
+.list-group-item-sub-green {
+  border: 1px solid #54a05b;
+}
+
+
+.panel-green {
+  border-color: #54a081;
+
+  .panel-heading {
+    background-color: #54a081;
+    border-color: inherit;
+
+    .panel-title {
+      color: white;
+    }
+  }
+}
+
+.panel-sub-green {
+  border-color: #54a05b;
+
+  .panel-heading {
+    background-color: #54a05b;
+    border-color: inherit;
+
+    .panel-title {
+      color: white;
+    }
+  }
+}
+
+.panel-brown {
+  border-color: #a08154;
+
+  .panel-heading {
+    background-color: #a08154;
+    border-color: inherit;
+
+    .panel-title {
+      color: white;
+    }
+  }
+}
+
+.panel-red {
+  border-color: #a05b54;
+
+  .panel-heading {
+    background-color: #a05b54;
+    border-color: inherit;
+
+    .panel-title {
+      color: white;
+    }
+  }
+}
+
+.btn {
+  &:hover {
+    color: white;
+    opacity: 0.7;
+  }
+
+  &:focus {
+    color: white;
+  }
+}
+
+.btn-sub-green {
+  background: #54a05b;
+  color: white;
+}
+
+.btn-red {
+  background: #a05b54;
+  color: white;
+}
+
+.article-body {
+  font-size: 17px;
+}
+
+.notice {
+  width: 100%;
+  border: 2px solid green;
+  background: #fff;
+  color: green;
+  margin-bottom: 20px;
+  padding: 1rem;
+}
+
+.alert {
+  width: 100%;
+  border: 2px solid red;
+  background: #fff;
+  color: red;
+  margin-bottom: 20px;
+  padding: 1rem;
+}

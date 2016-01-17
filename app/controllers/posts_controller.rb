@@ -1,0 +1,41 @@
+class PostsController < ApplicationController
+  def index
+    # @posts = Post.where(user_id: params[:user_id])
+  end
+
+  def show
+    @post = Post.find_by(id: params[:id])
+    @main_categories = MainCategory.all
+  end
+
+  def new
+    @sub_category_id = Store.find_by(id: current_user.store_id).sub_category_id
+    @main_category_id = SubCategory.find_by(id: @sub_category_id).id
+  end
+
+  def create
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to user_path(current_user), notice: '投稿しました'
+    else
+      flash.now[:alert] = "投稿に失敗しました"
+      render :new
+    end
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def destroy
+    Post.find_by(id: params[:id]).destroy
+      # flash[:notice] = "記事を削除しました"
+      redirect_to user_path(current_user), notice: '記事を削除しました'
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :body, :user_id, :main_category_id, :sub_category_id)
+  end
+end

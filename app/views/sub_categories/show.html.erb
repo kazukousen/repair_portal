@@ -1,0 +1,15 @@
+<div class="col-md-9 col-xs-12 col-md-push-3">
+
+  <div class="list-group">
+    <div class="list-group-item active-sub-green">
+      カテゴリー一覧
+    </div>
+    <% @sub_categories.each do |sub_category| %>
+      <%= link_to sub_category.name, store_path(sub_category.id),
+        class: 'list-group-item list-group-item-sub-green' %>
+    <% end %>
+  </div>
+
+</div>
+
+<%= render 'layouts/main_categories', object: @main_categories %>

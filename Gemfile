@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.2.5'
-gem 'mysql2', '>= 0.3.13', '< 0.5'
+gem 'mysql2', '~> 0.3.20'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -10,6 +10,16 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+gem 'devise'
+
+gem 'bootstrap-sass'
+
+gem 'carrierwave'
+gem 'rmagick'
+
+# gem 'seed_fu', '~> 2.3'
+gem 'seed-fu', github: 'mbleigh/seed-fu'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -23,6 +33,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'awesome_print', require: 'ap'
+  gem 'pry-rails'
+  gem 'pry-doc'
+
+  gem 'bullet'
 end
 
 group :development do
@@ -32,4 +47,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

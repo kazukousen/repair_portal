@@ -1,0 +1,70 @@
+<div class="col-lg-8 col-lg-offset-2">
+
+<div class="form-horizontal" role="form">
+  <%= form_for @store, url: stores_path do |f| %>
+    <div class="panel panel-sub-green">
+      <div class="panel-heading">
+        <h2 class="panel-title">お店の登録</h2>
+      </div>
+​
+      <div class="panel-body">
+        <fieldset>
+​
+          <% if user_signed_in? %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+          <% end %>
+​
+          <div class="form-group">
+            <%= f.label "店名", class: :"col-sm-3 control-label" %>
+            <div class="col-sm-7">
+              <%= f.text_field :name, class: :"form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "写真", class: :"col-sm-3 control-label" %>
+            <div class="col-sm-7">
+              <%= f.file_field :image, class: :"form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "住所", class: :"col-sm-3 control-label" %>
+            <div class="col-sm-7">
+              <%= f.text_field :address, class: :"form-control" %>
+            </div>
+          </div>​
+
+          <div class="form-group">
+            <%= f.label "電話番号", class: :"col-sm-3 control-label" %>
+            <div class="col-sm-7">
+              <%= f.text_field :phone_number, class: :"form-control" %>
+            </div>
+          </div>​
+
+          <div class="form-group">
+            <%= f.label "説明文", class: :"col-sm-3 control-label" %>
+            <div class="col-sm-7">
+              <%= f.text_area :body, class: :"form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "サブカテゴリ", class: :"col-sm-3 control-label" %>
+            <div class="col-sm-7">
+              <%= f.collection_select :sub_category_id, @sub_categories, :id, :name, {}, { class: :"form-control" } %>
+            </div>
+          </div>
+​
+          <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-10">
+              <%= f.submit class: "btn btn-sub-green", value: "送信" %>
+            </div>
+          </div>
+​
+        </fieldset>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>
