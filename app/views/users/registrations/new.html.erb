@@ -32,7 +32,7 @@
             <%= f.password_field :password, class: 'form-control', autocomplete: false %>
               <% if @minimum_password_length %>
                 <span class="help-block">
-                  <%= @minimum_password_length %>文字以上
+                  パスワードは<%= @minimum_password_length %>文字以上にしてください
                 </span>
               <% end %>
             </div>
