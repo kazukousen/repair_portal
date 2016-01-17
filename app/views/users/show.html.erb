@@ -28,15 +28,14 @@
 </div>
 
 <div class="col-md-3 col-xs-12 col-md-pull-9">
-  <div class="panel panel-brown">
-    <div class="panel-heading">
-      <h2 class="panel-title">記事一覧</h2>
+  <div class="list-group">
+    <div class="list-group-item active-brown">
+      記事一覧
     </div>
-    <div class="panel-body">
-      <% @posts.each do |post| %>
-        <li> <%= link_to post.title, post_path(post.id) %> </li>
-      <% end %>
-    </div>
+    <% @posts.each do |post| %>
+      <%= link_to post.title, post_path(post.id),
+        class: 'list-group-item list-group-item-brown' %>
+    <% end %>
   </div>
 </div>
 
