@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @store = Store.find(@user.store_id) if @user.store_id
-    @posts = Post.where(user_id: params[:id])
+    @posts = Post.where(user_id: params[:id]).order("id DESC")
   end
 
   def select
