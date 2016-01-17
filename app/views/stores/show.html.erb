@@ -8,6 +8,11 @@
       <li class="list-group-item list-group-item-sub-green">
         <%= link_to store.name, store_users_path(store.id),
         class: 'store-title' %>
+        <% unless store.image.file.nil? %>
+          <%= image_tag store.image.thumb.url %>
+        <% else %>
+          <%= image_tag "/none.gif" %>
+        <% end %>
         <p>住所：<%= store.address %> 電話番号：<%= store.phone_number %></p>
         <p><%= store.body %></p>
       </li>
