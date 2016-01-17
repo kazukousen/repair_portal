@@ -36,6 +36,8 @@ group :development, :test do
   gem 'awesome_print', require: 'ap'
   gem 'pry-rails'
   gem 'pry-doc'
+
+  gem 'bullet'
 end
 
 group :development do
