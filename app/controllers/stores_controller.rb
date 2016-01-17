@@ -23,6 +23,6 @@ class StoresController < ApplicationController
   private
 
     def store_params
-      params.require(:store).permit(:name, :address, :phone_number, :body)
+      params.require(:store).permit(:name, :address, :phone_number, :body, :image)
     end
 end
