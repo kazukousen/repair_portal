@@ -14,3 +14,6 @@
 
 /spring/*.pid
 /vendor/bundle
+
+# Image Uploaded
+/public/uploads

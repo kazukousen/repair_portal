@@ -15,6 +15,9 @@ gem 'devise'
 
 gem 'bootstrap-sass'
 
+gem 'carrierwave'
+gem 'rmagick'
+
 # gem 'seed_fu', '~> 2.3'
 gem 'seed-fu', github: 'mbleigh/seed-fu'
 
