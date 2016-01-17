@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
     if params[:post_id]
       @posts = Post.where(user_id: params[:post_id])
-      @username = @posts.first.user.name
+      @username = User.find(params[:post_id]).name
     end
 
     @main_categories = MainCategory.all
