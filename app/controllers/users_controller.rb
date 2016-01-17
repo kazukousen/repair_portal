@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     end
 
     if params[:post_id]
-      @posts = Post.where(user_id: params[:post_id])
+      @posts = Post.where(user_id: params[:post_id]).order("id DESC")
       @username = User.find(params[:post_id]).name
     end
 
