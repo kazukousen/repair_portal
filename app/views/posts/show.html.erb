@@ -10,6 +10,12 @@
     </div>
     <div class="panel-body">
 
+      <% if @post.image? %>
+        <%= image_tag @post.image.thumb.url %>
+      <% else %>
+        <%= image_tag 'noimage.gif' %>
+      <% end %>
+
       <p class="article-body"><%= @post.body %></p>
 
       <p class="text-right">投稿者：<%= @post.user.name %></p>
