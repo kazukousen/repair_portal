@@ -27,6 +27,10 @@ body {
   font-weight: bold;
 }
 
+.thumbnail {
+  margin-bottom: 8px;
+}
+
 .main-image {
   text-align: center;
 }
@@ -64,6 +68,10 @@ body {
   background: #a08154;
   color: white;
   border: 1px solid #a08154;
+}
+
+.list-group-item {
+  padding: 13px 15px 10px;
 }
 
 .list-group-item-brown {
