@@ -15,9 +15,9 @@
         </h3>
 
         <% unless @store.image.file.nil? %>
-          <%= image_tag @store.image.thumb.url %>
+          <%= image_tag @store.image.thumb.url, class: 'thumbnail' %>
         <% else %>
-          <%= image_tag "/none.gif" %>
+          <%= image_tag "/none.png", class: 'thumbnail' %>
         <% end %>
 
       <% else %>

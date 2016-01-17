@@ -5,6 +5,11 @@
           ユーザ一覧
       </div>
 
+      <% if @users.empty? %>
+        <p class="list-group-item list-group-item-sub-green">
+          ユーザーはいません
+        </p>
+      <% end %>
       <% @users.each do |user| %>
         <%= link_to user.name, post_users_path(user.id),
           class: 'list-group-item list-group-item-sub-green' %>
@@ -20,11 +25,6 @@
       <% @posts.each do |post| %>
         <li class="list-group-item list-group-item-sub-green">
           <span class="store-title"><%= post.title %></span>
-          <% if post.image? %>
-            <%= image_tag post.image.thumb.url %>
-          <% else %>
-            <%= image_tag 'noimage.gif' %>
-          <% end %>
           <p><%= post.body.truncate(30, omission: '...') %></p>
           <%= link_to "続きを読む", post_path(post.id), class: "text-right", style: 'text-align:center' %>
         </li>

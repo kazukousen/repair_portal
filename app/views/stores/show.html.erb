@@ -1,23 +1,29 @@
 <div class="col-md-9 col-xs-12 col-md-push-3">
 
-  <ul class="list-group">
+  <div class="list-group">
     <div class="list-group-item active-sub-green">
       店一覧
     </div>
     <% @stores.each do |store| %>
-      <li class="list-group-item list-group-item-sub-green">
-        <%= link_to store.name, store_users_path(store.id),
-        class: 'store-title' %>
-        <% unless store.image.file.nil? %>
-          <%= image_tag store.image.thumb.url %>
-        <% else %>
-          <%= image_tag "/none.gif" %>
-        <% end %>
-        <p>住所：<%= store.address %> 電話番号：<%= store.phone_number %></p>
-        <p><%= store.body %></p>
-      </li>
+      <div class="list-group-item list-group-item-sub-green">
+        <div class="row">
+          <div class="col-lg-2 col-xs-5 text-center">
+            <% unless store.image.file.nil? %>
+              <%= image_tag store.image.thumb.url, class: 'thumbnail' %>
+            <% else %>
+              <%= image_tag "/none.png", class: 'thumbnail' %>
+            <% end %>
+          </div>
+          <div class="col-lg-10 col-xs-6">
+            <%= link_to store.name, store_users_path(store.id),
+            class: 'store-title' %>
+            <p>住所：<%= store.address %> <br> 電話番号：<%= store.phone_number %></p>
+            <p>✓<%= store.body %></p>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </ul>
+  </div>
 </div>
 
 <%= render 'layouts/main_categories', object: @main_categories %>
