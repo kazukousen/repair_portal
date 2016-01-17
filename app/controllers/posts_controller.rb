@@ -16,11 +16,15 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to root_path, notice: '投稿しました'
+      redirect_to user_path(current_user), notice: '投稿しました'
     else
       flash.now[:alert] = "投稿に失敗しました"
       render :new
     end
+  end
+
+  def edit
+    @post = Post.find(params[:id])
   end
 
   private
