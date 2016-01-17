@@ -12,8 +12,12 @@
 
       <p class="article-body"><%= @post.body %></p>
 
+        <% if current_user %>
+          <%= link_to '編集する', edit_post_path(params[:id]), class: 'btn btn-primary' %>
+        <% end %>
       <p class="text-right article-username">投稿者：<%= @post.user.name %></p>
       <p class="text-right">投稿日：<%= @post.created_at.strftime("%Y年 %m月 %d日") %></p>
+
     </div>
   </div>
 
