@@ -27,6 +27,12 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def destroy
+    Post.find_by(id: params[:id]).destroy
+      # flash[:notice] = "記事を削除しました"
+      redirect_to user_path(current_user), notice: '記事を削除しました'
+  end
+
   private
 
   def post_params
