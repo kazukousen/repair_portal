@@ -25,7 +25,7 @@
           <% else %>
             <%= image_tag 'noimage.gif' %>
           <% end %>
-          <p><%= post.body.truncate(20, omission: '...') %></p>
+          <p><%= post.body.truncate(30, omission: '...') %></p>
           <%= link_to "続きを読む", post_path(post.id), class: "text-right", style: 'text-align:center' %>
         </li>
       <% end %>
